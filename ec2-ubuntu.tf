@@ -46,6 +46,7 @@ resource "aws_instance" "dima-EC2" {
     git_repo             = "pcc-drift"
     yor_trace            = "d75fff88-ece5-4107-81eb-a23de5245fb5"
   }
+  monitoring = true
 }
 
 data "aws_ami" "ubuntu" {
