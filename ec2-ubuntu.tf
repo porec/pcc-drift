@@ -19,6 +19,16 @@ resource "aws_security_group" "dima-SG" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    git_commit           = "c3ac37102bc317699e966bfdb3b33c747a284d01"
+    git_file             = "ec2-ubuntu.tf"
+    git_last_modified_at = "2022-07-18 07:10:37"
+    git_last_modified_by = "32958664+dreshytnik@users.noreply.github.com"
+    git_modifiers        = "32958664+dreshytnik"
+    git_org              = "porec"
+    git_repo             = "pcc-drift"
+    yor_trace            = "f7ad4963-1460-4a69-8bac-436ed0d0d921"
+  }
 }
 
 resource "aws_instance" "dima-EC2" {
@@ -26,6 +36,16 @@ resource "aws_instance" "dima-EC2" {
   instance_type   = "t2.micro"
   security_groups = ["${aws_security_group.dima-SG.name}"]
   key_name        = "linux-key-pair"
+  tags = {
+    git_commit           = "c3ac37102bc317699e966bfdb3b33c747a284d01"
+    git_file             = "ec2-ubuntu.tf"
+    git_last_modified_at = "2022-07-18 07:10:37"
+    git_last_modified_by = "32958664+dreshytnik@users.noreply.github.com"
+    git_modifiers        = "32958664+dreshytnik"
+    git_org              = "porec"
+    git_repo             = "pcc-drift"
+    yor_trace            = "d75fff88-ece5-4107-81eb-a23de5245fb5"
+  }
 }
 
 data "aws_ami" "ubuntu" {
