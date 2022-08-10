@@ -29,7 +29,15 @@ resource "aws_security_group" "dima-SG" {
     git_repo             = "pcc-drift"
     yor_trace            = "f7ad4963-1460-4a69-8bac-436ed0d0d921"
   }
+  ingress {
+    to_port     = 443
+    protocol    = "tcp"
+    from_port   = 443
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  vpc_id = "vpc-db861ab1"
 }
+
 
 resource "aws_instance" "dima-EC2" {
   ami             = data.aws_ami.ubuntu.id
